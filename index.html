@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WebGL Shader</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #webgl-canvas {
+            display: block;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+        }
+        #editor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 53em;
+            height: 100%;
+            z-index: 10;
+            background: #13141185;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="glostr.js"></script>
+</head>
+<body>
+    <div id="editor"></div>
+    <canvas id="webgl-canvas"></canvas>
+    <script>
+        fetch("fragment.glsl")
+            .then((resource) => resource.text())
+            .then((fragment) => glostr(fragment));
+    </script>
+</body>
+</html>
