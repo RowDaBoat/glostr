@@ -6,6 +6,7 @@
     <title>glostr</title>
     <link href="glostr.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="glostr.js"></script>
 </head>
@@ -14,6 +15,12 @@
         <span class="purple">gl</span><span class="white">ostr</span>
     </div>
     <div class="content">
+        <button class="toggle-code">
+            <span class="material-icons purple show-shader toggle">image</span>
+            <span class="show-code toggle">
+                <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
+            </span>
+        </button>
         <div id="editor"></div>
         <canvas class="shader"></canvas>  
     </div>

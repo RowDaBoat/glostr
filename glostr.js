@@ -39,8 +39,14 @@ function glostr(fragment = defaultFragmentShaderSource) {
     editor.session.setMode("ace/mode/glsl");
     editor.setValue(fragment, -1);
 
+    ////////////////
+    ///  Program  //
+    ////////////////
     program = new GlostrProgram(gl, editor.getValue(), canvas.width, canvas.height);
 
+    ///////////////
+    ///  Editor  //
+    ///////////////
     editor.session.on('change', () => {
         try {
             program?.destroy();
@@ -48,6 +54,14 @@ function glostr(fragment = defaultFragmentShaderSource) {
         } catch (e) {
             console.error(e);
         }
+    });
+
+    editor.container.addEventListener("mouseenter", () => {
+        document.body.style.overscrollBehaviorX = 'none';
+    });
+
+    editor.container.addEventListener("mouseleave", () => {
+        document.body.style.overscrollBehaviorX = 'unset';
     });
 
     new ResizeObserver(() => {
@@ -65,6 +79,26 @@ function glostr(fragment = defaultFragmentShaderSource) {
     }
 
     render();
+
+
+
+    const button = document.getElementsByClassName('toggle-code')[0];
+    const showCode = document.querySelector('.show-code');
+    const showShader = document.querySelector('.show-shader');
+    let showingCode = false;
+    editor.container.style.display = "none";
+
+    showShader.style.display = 'none';
+    showCode.style.display = 'flex';
+
+    button.addEventListener('click', () => {
+        showingCode = !showingCode;
+
+        const [activate, deactivate] = showingCode ? [showShader, showCode] : [showCode, showShader];
+        activate.style.display = 'flex';
+        deactivate.style.display = 'none';
+        editor.container.style.display = showingCode? 'block' : 'none';
+    });
 }
 
 class GlostrProgram {
