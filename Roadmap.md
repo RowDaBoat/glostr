@@ -1,4 +1,5 @@
 - [ ] separate .content to its own css
 - [ ] show errors on the editor
-- [ ] Take out #version
-- [ ] Take out precision mediump float;
+- [ ] migrate to typescript
+- [ ] take out #version
+- [ ] take out precision mediump float;

@@ -14,24 +14,22 @@
     <div class="title">
         <span class="purple">gl</span><span class="white">ostr</span>
     </div>
-    <div class="content">
-        <div class="glostr-component">
-            <div class="glostr-component-wrapped">
-                <button class="toggle-code">
-                    <span class="material-icons purple show-shader toggle">image</span>
-                    <span class="show-code toggle">
-                        <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
-                    </span>
-                </button>
-                <div id="editor"></div>
-                <canvas class="shader"></canvas>  
-            </div>
+    <div id="content">
+        <div id="glostr-component">
+            <button id="toggle-code">
+                <span class="material-icons purple show-shader toggle">image</span>
+                <span class="show-code toggle">
+                    <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
+                </span>
+            </button>
+            <div id="editor"></div>
+            <canvas id="shader"></canvas>  
         </div>
     </div>
     <script>
         fetch("fragment.glsl")
             .then((resource) => resource.text())
-            .then((fragment) => glostr(fragment));
+            .then((fragment) => glostr(fragment, 4/3));
     </script>
 </body>
 </html>

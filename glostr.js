@@ -23,8 +23,17 @@ void main() {
 }
 `
 
-function glostr(fragment = defaultFragmentShaderSource) {
-    const canvas = document.getElementsByClassName('shader')[0];
+function glostr(fragment = defaultFragmentShaderSource, aspectRatio = null) {
+    const component = document.getElementById('glostr-component');
+
+    new ResizeObserver(() => {
+        if (aspectRatio == null)
+            return;
+
+        component.style.height = `${component.offsetWidth / aspectRatio}px`;
+    }).observe(component);
+
+    const canvas = document.getElementById('shader');
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     const gl = canvas.getContext('webgl2');
@@ -82,7 +91,7 @@ function glostr(fragment = defaultFragmentShaderSource) {
 
 
 
-    const button = document.getElementsByClassName('toggle-code')[0];
+    const button = document.getElementById('toggle-code');
     const showCode = document.querySelector('.show-code');
     const showShader = document.querySelector('.show-shader');
     let showingCode = false;

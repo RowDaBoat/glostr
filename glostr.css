@@ -19,7 +19,7 @@ body {
 .white {
     color: #d0d0d0;
 }
-.content {
+#content {
     display: flex;
     position: absolute;
     top: 200px;
@@ -31,13 +31,13 @@ body {
 }
 
 /*Glostr Component*/
-.glostr-component {
+#glostr-component {
     display: flex;
     position: relative;
     width: 800px;
     height: 600px;
 }
-.shader {
+#shader {
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@ body {
     background: #131411A0;
     border-radius: 8px;
 }
-.toggle-code {
+#toggle-code {
     font-family: 'JetBrains Mono', monospace;
     font-weight: bold;
     display: flex;
