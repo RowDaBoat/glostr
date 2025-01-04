@@ -24,7 +24,9 @@ void main() {
 `
 
 function glostr(fragment = defaultFragmentShaderSource) {
-    const canvas = document.getElementById('webgl-canvas');
+    const canvas = document.getElementsByClassName('shader')[0];
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
     const gl = canvas.getContext('webgl2');
 
     if (!gl) {
@@ -36,6 +38,7 @@ function glostr(fragment = defaultFragmentShaderSource) {
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/glsl");
     editor.setValue(fragment, -1);
+
     program = new GlostrProgram(gl, editor.getValue(), canvas.width, canvas.height);
 
     editor.session.on('change', () => {
@@ -46,6 +49,12 @@ function glostr(fragment = defaultFragmentShaderSource) {
             console.error(e);
         }
     });
+
+    new ResizeObserver(() => {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        program.resize(canvas.width, canvas.height);
+    }).observe(canvas);
 
     let startTime = Date.now();
 
@@ -86,13 +95,13 @@ class GlostrProgram {
 
         //get parameter locations
         const positionLocation = gl.getAttribLocation(program, 'a_position');
-        const resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution');
+        this.resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution');
         this.timeUniformLocation = gl.getUniformLocation(program, 'u_time');
 
         //Initialize shader parameters
         gl.enableVertexAttribArray(positionLocation);
         gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-        gl.uniform2f(resolutionUniformLocation, width, height);
+        gl.uniform2f(this.resolutionUniformLocation, width, height);
 
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         gl.clearColor(0, 0, 0, 1);
@@ -104,6 +113,12 @@ class GlostrProgram {
 
         gl.uniform1f(this.timeUniformLocation, time);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+
+    resize = function(width, height) {
+        const gl = this.gl;
+        gl.uniform2f(this.resolutionUniformLocation, width, height);
+        gl.viewport(0, 0, this.gl.drawingBufferWidth, this.gl.drawingBufferHeight);
     }
 
     createShader = function(type, source) {

@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple WebGL Shader</title>
+    <title>glostr</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            background-color: #2b2b2b;
         }
-        #webgl-canvas {
-            display: block;
+        .title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Cool drop shadow */
+        }
+        .title .purple {
+            color: #8e30eb;
+        }
+        .title .white {
+            color: #d0d0d0;
+        }
+        /* TODO separate this to its own css */
+        .content {
             position: absolute;
-            top: 0%;
-            left: 0%;
+            top: 200px;
+            left: 150px;
+            right: 150px;
+            bottom: 0;
+        }
+        .shader {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
         }
-        #editor {
+        #editor {/* TODO make this a class */
             position: absolute;
-            top: 0;
             left: 0;
-            width: 53em;
-            height: 100%;
+            right: 0;
+            top: 0;
+            bottom: 0;
             z-index: 10;
             background: #13141185;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="glostr.js"></script>
 </head>
 <body>
-    <div id="editor"></div>
-    <canvas id="webgl-canvas"></canvas>
+    <div class="title">
+        <span class="purple">gl</span><span class="white">ostr</span>
+    </div>
+    <div class="content">
+        <div id="editor"></div>
+        <canvas class="shader"></canvas>  
+    </div>
     <script>
         fetch("fragment.glsl")
             .then((resource) => resource.text())

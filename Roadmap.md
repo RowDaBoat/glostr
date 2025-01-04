@@ -1,0 +1,2 @@
+- [ ] Take out #version
+- [ ] Take out precision mediump float;
