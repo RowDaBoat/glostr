@@ -20,25 +20,43 @@ body {
     color: #d0d0d0;
 }
 .content {
+    display: flex;
     position: absolute;
     top: 200px;
-    left: 150px;
-    right: 150px;
-    bottom: 50px;
+    left: 25px;
+    right: 25px;
+    bottom: 0px;
     border-radius: 8px;
+    justify-content: center;
+}
+
+/*Glostr Component*/
+.glostr-component {
+    display: flex;
+    position: relative;
+    width: 800px;
+    height: 600px;
 }
 .shader {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 8px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
-
+#editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: #131411A0;
+    border-radius: 8px;
+}
 .toggle-code {
     font-family: 'JetBrains Mono', monospace;
     font-weight: bold;
@@ -56,16 +74,5 @@ body {
     background: rgba(32, 32, 32, 0.75);
     border: 2px solid #d0d0d0;
     cursor: pointer;
-    border-radius: 8px;
-}
-
-#editor {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10;
-    background: #13141185;
     border-radius: 8px;
 }

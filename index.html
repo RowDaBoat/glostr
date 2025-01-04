@@ -15,14 +15,18 @@
         <span class="purple">gl</span><span class="white">ostr</span>
     </div>
     <div class="content">
-        <button class="toggle-code">
-            <span class="material-icons purple show-shader toggle">image</span>
-            <span class="show-code toggle">
-                <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
-            </span>
-        </button>
-        <div id="editor"></div>
-        <canvas class="shader"></canvas>  
+        <div class="glostr-component">
+            <div class="glostr-component-wrapped">
+                <button class="toggle-code">
+                    <span class="material-icons purple show-shader toggle">image</span>
+                    <span class="show-code toggle">
+                        <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
+                    </span>
+                </button>
+                <div id="editor"></div>
+                <canvas class="shader"></canvas>  
+            </div>
+        </div>
     </div>
     <script>
         fetch("fragment.glsl")
