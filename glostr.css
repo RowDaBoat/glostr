@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #2b2b2b;
+}
+.title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+.title .purple {
+    color: #8e30eb;
+}
+.title .white {
+    color: #d0d0d0;
+}
+.content {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    right: 150px;
+    bottom: 50px;
+}
+.shader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+#editor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #13141185;
+}

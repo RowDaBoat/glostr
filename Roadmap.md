@@ -1,2 +1,4 @@
+- [ ] separate .content to its own css
+- [ ] make #editor a class
 - [ ] Take out #version
 - [ ] Take out precision mediump float;
