@@ -18,15 +18,16 @@
         <span class="purple">gl</span><span class="white">ostr</span>
     </div>
     <div id="content">
-        <div class="glostr-shader" shader="basic.glsl"></div>
+        <div class="glostr-shader"></div>
     </div>
     <script>
+        const shaders = [ "basic", "fragment", "grid", "starfield" ];
         const posts = document.getElementsByClassName("glostr-shader");
 
         for (const post of posts) {
-            const shader = post.getAttribute("shader")
+            const shader = shaders[Math.floor(Math.random() * shaders.length)];
 
-            fetch("shaders/" + shader)
+            fetch("shaders/" + shader + ".glsl")
                 .then((resource) => resource.text())
                 .then((code) => glostr.shader(post, code, 4/3));
         }
