@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>glostr</title>
-    <link href="glostr.css" rel="stylesheet">
+    <link href="style/glostr.css" rel="stylesheet">
+    <link href="style/glostr-shader.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="glostr.js"></script>
+    <script src="src/program.js"></script>
+    <script src="src/shader.js"></script>
+    <script src="src/glostr.js"></script>
 </head>
 <body>
     <div class="title">
         <span class="purple">gl</span><span class="white">ostr</span>
     </div>
     <div id="content">
-        <div id="glostr-component">
-            <button id="toggle-code">
-                <span class="material-icons purple show-shader toggle">image</span>
-                <span class="show-code toggle">
-                    <span class="white">{</span><span class="purple">gl</span><span class="white">}</span>
-                </span>
-            </button>
-            <div id="editor"></div>
-            <canvas id="shader"></canvas>  
-        </div>
+        <div class="glostr-shader" shader="basic.glsl"></div>
     </div>
     <script>
-        fetch("fragment.glsl")
-            .then((resource) => resource.text())
-            .then((fragment) => glostr(fragment, 4/3));
+        const posts = document.getElementsByClassName("glostr-shader");
+
+        for (const post of posts) {
+            const shader = post.getAttribute("shader")
+
+            fetch("shaders/" + shader)
+                .then((resource) => resource.text())
+                .then((code) => glostr.shader(post, code, 4/3));
+        }
     </script>
 </body>
 </html>

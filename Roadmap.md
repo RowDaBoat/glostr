@@ -1,5 +1,9 @@
-- [ ] separate .content to its own css
+- [ ] create a glostr component
+    - [ ] separate #content to its own css
 - [ ] show errors on the editor
 - [ ] migrate to typescript
 - [ ] take out #version
 - [ ] take out precision mediump float;
+- [ ] set up a PWA
+    - [ ] manifest and headers
+    - [ ] install button
