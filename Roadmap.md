@@ -1,7 +1,19 @@
-- [ ] create a glostr component
-    - [ ] separate #content to its own css
-- [ ] show errors on the editor
 - [ ] migrate to typescript
+    - [x] move js site to dist
+    - [ ] setup gitlab pages to the dist directory
+    - [ ] setup vite
+    - [ ] create ts project structure
+    - [ ] migrate js to ts and out of dist
+- [ ] read nostr posts
+    - [x] read posts from an npub
+    - [ ] wrap it in a service
+- [ ] create a glostr component
+    - [x] separate #content to its own css
+    - [ ] create the ts component
+- [ ] show glostr posts from nostr
+    - [ ] filter posts tagged with #glostr
+    - [ ] read and render glsl code 
+- [ ] show errors on the editor
 - [ ] take out #version
 - [ ] take out precision mediump float;
 - [ ] set up a PWA
