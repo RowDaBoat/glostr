@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #2b2b2b;
+}
+  
+.title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+.purple {
+    color: #8e30eb;
+}
+.white {
+    color: #d0d0d0;
+}
+#content {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    left: 25px;
+    right: 25px;
+    bottom: 0px;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+/*Glostr Component*/
+.glostr-shader {
+    display: flex;
+    position: relative;
+    width: 800px;
+    height: 600px;
+}

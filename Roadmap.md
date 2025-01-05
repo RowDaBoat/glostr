@@ -1,8 +1,9 @@
 - [ ] migrate to typescript
-    - [x] move js site to dist
-    - [ ] setup npm, ts, and vite
+    - [x] move js site to public
+    - [x] setup npm, ts, and vite
+    - [ ] setup github pages properly
     - [ ] create ts project structure
-    - [ ] migrate js to ts and out of dist
+    - [ ] migrate js to ts and out of public
 - [ ] read nostr posts
     - [x] read posts from an npub
     - [ ] wrap it in a service
