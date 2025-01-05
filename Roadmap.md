@@ -1,7 +1,6 @@
 - [ ] migrate to typescript
     - [x] move js site to dist
-    - [ ] setup gitlab pages to the dist directory
-    - [ ] setup vite
+    - [ ] setup npm, ts, and vite
     - [ ] create ts project structure
     - [ ] migrate js to ts and out of dist
 - [ ] read nostr posts
