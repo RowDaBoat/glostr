@@ -1,3 +1,5 @@
-const glostr = {
-    shader: glostrShader
-};
+class Glostr {
+    function shader(): Shader {
+
+    }
+}

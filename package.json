@@ -2,17 +2,21 @@
     "name": "glostr",
     "private": true,
     "version": "0.0.0",
+    "homepage": "https://rowdaboat.github.io/glostr/",
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "preview": "vite preview",
         "build": "tsc && vite build",
-        "preview": "vite preview"
+        "deploy": "tsc && vite build && gh-pages -d dist"
     },
     "devDependencies": {
+        "gh-pages": "^6.3.0",
         "typescript": "~5.6.2",
         "vite": "^6.0.5"
     },
     "dependencies": {
+        "ace-builds": "^1.37.1",
         "nostr-tools": "^2.10.4"
     }
 }
