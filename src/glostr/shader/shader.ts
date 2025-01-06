@@ -1,8 +1,9 @@
+import * as ace from 'ace-builds'
 import Program from './program'
 import ToggleCode from './toggleCode'
 import { Mode } from './mode'
 import html from './shader.html?raw'
-import * as ace from 'ace-builds'
+import style from './shader.css?inline'
 
 export default class Shader {
     private gl: WebGL2RenderingContext
@@ -16,7 +17,7 @@ export default class Shader {
     }
 
     constructor(code: string, aspectRatio: number) {
-        const container = parse(html)
+        const container = buildElement(html, style)
         const canvas = container.querySelector('.shader-canvas') as HTMLCanvasElement
         const editor = container.querySelector('.shader-editor') as HTMLElement
 
@@ -40,10 +41,13 @@ export default class Shader {
     keepAspectRatio(aspectRatio: number) {
         const container = this.container
 
+        console.log(this.container.classList)
+
         new ResizeObserver(() => {
             if (aspectRatio == null)
                 return;
     
+            console.log("Hello")
             container.style.height = `${container.offsetWidth / aspectRatio}px`;
         }).observe(container);
     }
@@ -107,8 +111,12 @@ export default class Shader {
     }
 }
 
-function parse(htmlText: string): HTMLElement {
+function buildElement(htmlText: string, cssText: string): HTMLElement {
     const parser = new DOMParser()
     const doc = parser.parseFromString(htmlText, 'text/html')
-    return doc.body.firstElementChild as HTMLElement
+    const element = doc.body.firstElementChild as HTMLElement
+    const style = document.createElement('style')
+    style.textContent = cssText
+    element.appendChild(style)
+    return element
 }
