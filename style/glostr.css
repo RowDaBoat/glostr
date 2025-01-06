@@ -3,7 +3,6 @@ body {
     overflow: hidden;
     background-color: #2b2b2b;
 }
-  
 .title {
     font-family: 'JetBrains Mono', monospace;
     font-size: 5rem;
@@ -19,7 +18,7 @@ body {
 .white {
     color: #d0d0d0;
 }
-#content {
+#glostr-posts {
     display: flex;
     position: absolute;
     top: 200px;
@@ -28,12 +27,4 @@ body {
     bottom: 0px;
     border-radius: 8px;
     justify-content: center;
-}
-
-/*Glostr Component*/
-.glostr-shader {
-    display: flex;
-    position: relative;
-    width: 800px;
-    height: 600px;
 }
