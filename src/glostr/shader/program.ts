@@ -9,15 +9,22 @@ export default class Program {
 
     constructor(gl: WebGL2RenderingContext, fragmentSource: string, width: number, height: number) {
         this.gl = gl;
-        const program = gl.createProgram();
+        const program = gl.createProgram()
+            ?? fail("Could not create gl program.")
+
         this.program = program;
 
         this.setupProgram(fragmentSource)
         this.setupGeometry()
 
-        this.positionLocation = gl.getAttribLocation(program, 'a_position')!!
-        this.resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution')!!
-        this.timeUniformLocation = gl.getUniformLocation(program, 'u_time')!!
+        this.positionLocation = gl.getAttribLocation(program, 'a_position')
+            ?? fail("Could not get position attribute location.")
+
+        this.resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution')
+            ?? fail("Could not get resolution uniform location.")
+
+        this.timeUniformLocation = gl.getUniformLocation(program, 'u_time')
+            ?? fail("Could not get time uniform location.")
 
         this.setupParameters(width, height)
         this.setupViewport()
@@ -114,3 +121,8 @@ export default class Program {
         return shader;
     }
 }
+
+function fail(message: string): any {
+    throw new Error(message);
+}
+

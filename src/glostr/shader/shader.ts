@@ -41,13 +41,10 @@ export default class Shader {
     keepAspectRatio(aspectRatio: number) {
         const container = this.container
 
-        console.log(this.container.classList)
-
         new ResizeObserver(() => {
             if (aspectRatio == null)
                 return;
     
-            console.log("Hello")
             container.style.height = `${container.offsetWidth / aspectRatio}px`;
         }).observe(container);
     }
