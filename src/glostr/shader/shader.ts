@@ -46,7 +46,6 @@ export default class Shader {
                 return;
 
             container.style.height = `${container.offsetWidth / aspectRatio}px`;
-            console.log("set to: " + container.style.height)
         }).observe(container);
     }
 

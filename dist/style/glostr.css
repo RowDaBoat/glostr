@@ -11,6 +11,9 @@ body {
     justify-content: center;
     height: 200px;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative; /* Required for z-index to work */
+    z-index: 10; /* Ensures .title is above #glostr-posts */
 }
 .purple {
     color: #8e30eb;
@@ -21,10 +24,14 @@ body {
 #glostr-posts {
     display: flex;
     position: absolute;
+    align-items: center;
+    flex-direction: column;
     top: 200px;
-    left: 25px;
-    right: 25px;
+    left: 12px;
+    right: 12px;
     bottom: 0px;
     border-radius: 8px;
-    justify-content: center;
+    overflow-y: auto;
+    gap: 80px;
+    padding: 40px;
 }

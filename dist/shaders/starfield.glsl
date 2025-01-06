@@ -1,7 +1,9 @@
 #version 300 es
 precision mediump float;
 
-//Original shader: Starfield by totetematt: https://www.shadertoy.com/view/lcjGWV
+// Original shader:
+// Starfield by totetematt
+// www.shadertoy.com/view/lcjGWV
 
 uniform vec2 u_resolution;
 uniform float u_time;

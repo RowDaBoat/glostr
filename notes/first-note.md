@@ -1,3 +1,8 @@
+How about glsl shaders on nostr?
+Watch this post on #glostr
+https://rowdaboat.github.io/glostr/#npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql
+
+```glsl
 #version 300 es
 precision mediump float;
 
@@ -65,3 +70,4 @@ void main()
     
     fragColor = col;
 }
+```

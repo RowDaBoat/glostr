@@ -14,3 +14,5 @@ shaders.forEach(shader => {
         .then((code) => glostr.shader(code, 4/3))
         .then((shader) => posts.appendChild(shader.container));    
 })
+
+console.log(window.location.hash.substring(1))
