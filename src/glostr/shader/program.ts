@@ -4,8 +4,8 @@ export default class Program {
     private gl: WebGL2RenderingContext
     private program: WebGLProgram
     private positionLocation: number;
-    private resolutionUniformLocation: WebGLUniformLocation;
-    private timeUniformLocation: WebGLUniformLocation;
+    private resolutionUniformLocation: WebGLUniformLocation|null;
+    private timeUniformLocation: WebGLUniformLocation|null;
 
     constructor(gl: WebGL2RenderingContext, fragmentSource: string, width: number, height: number) {
         this.gl = gl;
@@ -18,14 +18,9 @@ export default class Program {
         this.setupGeometry()
 
         this.positionLocation = gl.getAttribLocation(program, 'a_position')
-            ?? fail("Could not get position attribute location.")
-
         this.resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution')
-            ?? fail("Could not get resolution uniform location.")
-
         this.timeUniformLocation = gl.getUniformLocation(program, 'u_time')
-            ?? fail("Could not get time uniform location.")
-
+ 
         this.setupParameters(width, height)
         this.setupViewport()
     }

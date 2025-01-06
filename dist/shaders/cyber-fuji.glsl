@@ -1,9 +1,7 @@
 #version 300 es
 precision mediump float;
 
-// Original shader:
-// Cyber Fuji by kaiware007
-// https://www.shadertoy.com/view/Wt33Wf
+//Original shader: Cyber Fuji by kaiware007: https://www.shadertoy.com/view/Wt33Wf
 
 uniform vec2 u_resolution;
 uniform float u_time;
