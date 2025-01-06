@@ -3,7 +3,7 @@ precision mediump float;
 
 // Original shader:
 // fractal pyramid by bradjamesgrant
-// https://www.shadertoy.com/view/tsXBzS
+// www.shadertoy.com/view/tsXBzS
 
 uniform vec2 u_resolution;
 uniform float u_time;

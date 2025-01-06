@@ -27,8 +27,8 @@ body {
     align-items: center;
     flex-direction: column;
     top: 200px;
-    left: 25px;
-    right: 25px;
+    left: 12px;
+    right: 12px;
     bottom: 0px;
     border-radius: 8px;
     overflow-y: auto;
