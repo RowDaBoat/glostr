@@ -1,0 +1,56 @@
+.glostr-notice {
+    font-family: 'Roboto', sans-serif;
+    color: #d0d0d0;
+    background-color: #383838;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.125);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .6);
+}
+
+.glostr-notice .glostr-name {
+    font-size: 1.15em;
+}
+
+.glostr-notice h1 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    color: #d5d5d5;
+}
+
+.glostr-notice h2 {
+    color: #d0d0d0;
+    margin-top: 1.4em;
+    margin-bottom: .8em;
+}
+
+.glostr-notice p {
+    color: #c5c5c5;
+    margin-bottom: 2.5em;
+    margin-left: .5em;
+}
+
+.glostr-notice a {
+    color: #c5c5c5;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.glostr-notice a.purple {
+    color: #8e30eb;
+}
+
+.glostr-notice code {
+    font-size: 1.15em;
+}
+
+.glostr-notice code.code {
+    font-size: 1em;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    display: inline-block;
+}

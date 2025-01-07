@@ -3,16 +3,19 @@
     - [x] setup npm, ts, and vite
     - [x] setup github pages properly
     - [x] create ts project structure
-    - [ ] migrate js to ts and out of public
-- [ ] read nostr posts
+    - [x] migrate js to ts and out of public
+- [x] read nostr posts
     - [x] read posts from an npub
-    - [ ] wrap it in a service
-- [ ] create a glostr component
+    - [x] wrap it in a service
+- [x] create a glostr component
     - [x] separate #content to its own css
-    - [ ] create the ts component
-- [ ] show glostr posts from nostr
-    - [ ] filter posts tagged with #glostr
-    - [ ] read and render glsl code 
+    - [x] create the ts component
+- [x] show glostr posts from nostr
+    - [x] read and render glsl code
+- [ ] small show and tell
+    - [ ] add a small notice on the front
+    - [ ] fix editor input
+    - [ ] small BTC shader
 - [ ] show errors on the editor
 - [ ] take out #version
 - [ ] take out precision mediump float;
