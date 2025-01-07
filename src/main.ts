@@ -17,9 +17,10 @@ if (npub.length > 0) {
         filter(message => hasGlsl(message)),
         map(message => extractGlsl(message))
     ).subscribe(code => {
-        console.log("peeto: " + code)
-        const shader = glostr.shader(code, 4/3)
+        console.log("code: " + code)
+        const shader = glostr.shader(code.trim(), 4/3)
         postsContainer.appendChild(shader.container)
+        console.log("done")
     })
 }
 
