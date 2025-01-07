@@ -13,8 +13,8 @@
 - [x] show glostr posts from nostr
     - [x] read and render glsl code
 - [ ] small show and tell
-    - [ ] add a small notice on the front
-    - [ ] fix editor input
+    - [x] add a small notice on the front
+    - [x] fix editor input
     - [ ] small BTC shader
 - [ ] show errors on the editor
 - [ ] take out #version

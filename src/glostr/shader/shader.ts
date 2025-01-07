@@ -79,18 +79,23 @@ export default class Shader {
         );
 
         editor.session.on('change', () => {
+            const newProgram = this.createProgram(editor.getValue())
+
+            if (newProgram == null)
+                return
+
             this.program?.destroy()
-            this.program = this.createProgram(editor.getValue())
+            this.program = newProgram
         });
     }
 
-    createProgram(code: string): Program {
+    createProgram(code: string): Program|null {
         try {
             const canvas = this.canvas
             return new Program(this.gl, code, canvas.width, canvas.height)
         } catch (e) {
             console.error(e)
-            throw new Error("Could not create shader.")
+            return null
         }
     }
 

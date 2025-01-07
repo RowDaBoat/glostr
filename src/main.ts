@@ -1,29 +1,37 @@
-import { filter, map } from 'rxjs';
+import { filter, firstValueFrom, map, take, takeLast } from 'rxjs';
 import Glostr from './glostr/glostr.ts'
 import NostrPosts from './posts/nostrPosts.ts'
-import LocalPosts from './posts/localPosts.ts';
 import noticeHtml from './glostr-notice.html?raw'
 import noticeStyle from './glostr-notice.css?inline'
 
 const npub = window.location.hash.substring(1)
 const postsContainer = document.getElementById("glostr-posts")!!;
 const glostr = new Glostr();
+const posts = new NostrPosts()
 
 if (npub.length > 0) {
-    console.log(npub)
-    const posts = new NostrPosts()
-    //const posts = new LocalPosts()
-
     posts.getPosts(npub).pipe(
         filter(message => hasGlsl(message)),
         map(message => extractGlsl(message))
     ).subscribe(code => {
-        console.log("code: " + code)
         const shader = glostr.shader(code.trim(), 4/3)
         postsContainer.appendChild(shader.container)
-        console.log("done")
     })
 } else {
+    const rowsNpub = "npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql"
+    posts.getPosts(rowsNpub).pipe(
+        filter(message => hasGlsl(message)),
+        map(message => {
+            console.log("woot")
+            return extractGlsl(message)
+        }),
+        take(1)
+    ).subscribe(code => {
+        console.log("weet")
+        const shader = glostr.shader(code.trim(), 4/3)
+        postsContainer.prepend(shader.container)
+    })
+
     postsContainer.appendChild(buildElement(noticeHtml, noticeStyle))
 }
 
