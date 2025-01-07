@@ -8,7 +8,10 @@ import Posts from './posts';
 const relayUrls = [
     "wss://relay.damus.io",
     "wss://nostr-pub.wellorder.net",
-    "wss://relay.snort.social"
+    "wss://relay.snort.social",
+    "wss://nostr.land",
+    "wss://nostr.wine",
+    "wss://nos.lol"
 ];
 
 export default class NostrPosts implements Posts {
