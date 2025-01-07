@@ -1,18 +1,34 @@
-import Glostr from './glostr/glostr.ts'
+import { filter, map } from 'rxjs';
+import Glostr from './glostr/glostr.ts'
+import NostrPosts from './posts/nostrPosts.ts'
+import LocalPosts from './posts/localPosts.ts';
 
-const shaders = [ "basic", "cyber-fuji", "starfield", "fractal-pyramid" ]
-    .map(value => ({value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
+//npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql
+const npub = window.location.hash.substring(1)
+const postsContainer = document.getElementById("glostr-posts")!!;
+const glostr = new Glostr();
 
-shaders.forEach(shader => {
-    const posts = document.getElementById("glostr-posts")!!;
-    const glostr = new Glostr();
-    
-    fetch("shaders/" + shader + ".glsl")
-        .then((resource) => resource.text())
-        .then((code) => glostr.shader(code, 4/3))
-        .then((shader) => posts.appendChild(shader.container));    
-})
+if (npub.length > 0) {
+    console.log(npub)
+    const posts = new NostrPosts()
+    //const posts = new LocalPosts()
 
-console.log(window.location.hash.substring(1))
+    posts.getPosts(npub).pipe(
+        filter(message => hasGlsl(message)),
+        map(message => extractGlsl(message))
+    ).subscribe(code => {
+        console.log("peeto: " + code)
+        const shader = glostr.shader(code, 4/3)
+        postsContainer.appendChild(shader.container)
+    })
+}
+
+function hasGlsl(message: string): boolean {
+    return message.indexOf("```glsl") >= 0
+}
+
+function extractGlsl(message: string): string {
+    const part = message.split("```glsl")[1]
+    const code = part.split("```")[0]
+    return code
+}
