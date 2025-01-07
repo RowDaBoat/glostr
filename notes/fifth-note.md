@@ -1,8 +1,9 @@
-This one is all mine.
+This one is all mine SDF+Raymarching+Raytracing.
+[ Sorry for turning your GPU into a stove ]
 
-You can watch this post at #glostr: https://rowdaboat.github.io/glostr/#npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql
+You can watch this at #glostr:
+https://rowdaboat.github.io/glostr/#npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql
 
-Enjoy, dear nostriches:
 ```glsl
 #version 300 es
 precision mediump float;

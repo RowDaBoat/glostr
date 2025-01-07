@@ -1000,7 +1000,7 @@ void main() {
     <h2><b>Try it out</b></h2>
     <p>append an npub after <a href="http://rowdaboat.github.io/glostr/#" target="_blank">http://rowdaboat.github.io/glostr/#</a>, <a href="http://rowdaboat.github.io/glostr/#npub1u3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnks2uxaql" target="_blank">like so</a></p>
 
-    <h2><b>Its a prototype</b></h2>
+    <h2><b>It's a prototype</b></h2>
     <p><code class="glostr-name"><span class="purple">gl</span><span class="white">ostr</span></code> is still green (JA!), expect <b>la totalidad de los</b> breaking changes</p>
 
     <h2><b>In short</b></h2>
