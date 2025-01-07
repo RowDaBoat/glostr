@@ -15,7 +15,7 @@
 - [ ] small show and tell
     - [x] add a small notice on the front
     - [x] fix editor input
-    - [ ] small BTC shader
+    - [x] small BTC shader
 - [ ] show errors on the editor
 - [ ] take out #version
 - [ ] take out precision mediump float;
