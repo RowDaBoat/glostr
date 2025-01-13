@@ -8,21 +8,23 @@
 ## Zappable Shadertoy
 So, the idea is to create a small platform on top of #nostr where people can create, visualize, and share computer graphics programs (aka: shaders). Code shiny thing, see shiny, share shiny thing, and zap shiny thing. If you're familiar with [Shadertoy](https://shadertoy.com), #glostr is just that: **zappable shadertoy**.
 
+![bitcoin glostr](https://rowdaboat.github.io/glostr/notes/images/zap-shader.png)
 
 ## Milestone Zero
 So, first step was to write a quick and dirty prototype client (remember, I specc'd into game dev, not into web dev, so I really mean _quick_ and I really mean _dirty_). I got an [ace editor](https://github.com/ajaxorg/ace) thing working, duct-taped it to a basic WebGL render, stole a couple shaders from shadertoy (jk, I gave credit), poured some CSS magic, glued some `nostr-rx`, and published it to GitHub pages.
 
-![bitcoin glostr](https://rowdaboat.github.io/glostr/notes/images/btc-hader.png)
-
 After 2 or 3 days of iterating, and with some assistance from an LLM, you can see the result linked on my [notes](https://njump.me/nevent1qqsf45hy66cw55e3s2ewt6upe3m073q875hmjjtyyre7qtaxw9hl5scpp4mhxue69uhkummn9ekx7mqpzemhxue69uhhyetvv9ujumn0wd68ytnzv9hxgq3qu3svk99639mcdfn43s2nawg4a2j4ejmgrq2n63l4t67wzqdmtnkss70qyf).
 
 Yes. I used `kind 1` posts to spam GLSL code.
+
 I AM SORRY. I KNOW BETTER NOW. I SWEAR.
 
 So, right now #glostr is:
 - Taking an npub on the url after the #
 - Rendering all `kind 1` posts from that npub containing GLSL code between \`\`\`s
 - Allowing the user to edit the code in real time
+
+![bitcoin glostr](https://rowdaboat.github.io/glostr/notes/images/btc-shader.png)
 
 
 ## Next Steps
