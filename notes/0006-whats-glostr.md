@@ -8,7 +8,7 @@
 ## Zappable Shadertoy
 So, the idea is to create a small platform on top of #nostr where people can create, visualize, and share computer graphics programs (aka: shaders). Code shiny thing, see shiny, share shiny thing, and zap shiny thing. If you're familiar with [Shadertoy](https://shadertoy.com), #glostr is just that: **zappable shadertoy**.
 
-![bitcoin glostr](https://rowdaboat.github.io/glostr/notes/images/zap-shader.png)
+![zap-shader](https://rowdaboat.github.io/glostr/notes/images/zap-shader.png)
 
 ## Milestone Zero
 So, first step was to write a quick and dirty prototype client (remember, I specc'd into game dev, not into web dev, so I really mean _quick_ and I really mean _dirty_). I got an [ace editor](https://github.com/ajaxorg/ace) thing working, duct-taped it to a basic WebGL render, stole a couple shaders from shadertoy (jk, I gave credit), poured some CSS magic, glued some `nostr-rx`, and published it to GitHub pages.
@@ -24,7 +24,7 @@ So, right now #glostr is:
 - Rendering all `kind 1` posts from that npub containing GLSL code between \`\`\`s
 - Allowing the user to edit the code in real time
 
-![bitcoin glostr](https://rowdaboat.github.io/glostr/notes/images/btc-shader.png)
+![btc-shader](https://rowdaboat.github.io/glostr/notes/images/btc-shader.png)
 
 
 ## Next Steps
